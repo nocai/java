@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--<bean id="userValidator" class=-->
+    <!--"org.springmodules.validation.valang.ValangValidator">-->
+    <!--<property name="valang">-->
+    <!--<value>-->
+    <!--<![CDATA[-->
+    <!--{ name  : ? is not null and ? has text and length(?)<= 50-->
+    <!--: 'Name is empty or too long.'}-->
+    <!--{ age : ? between 0 and 60 : 'Age should between 0 and 60.'}-->
+    <!--{ birthday : ? is null or ? >[20000101]-->
+    <!--: 'Birthday should be after 2000-01-01.'}-->
+    <!--{ address : ? is not null : 'Address is empty.'}-->
+    <!--{ address.state : address is null or ( ? is not null and-->
+    <!--? has text and length(?)<=50 )-->
+    <!--: 'state is empty or too long.'}-->
+    <!--{ address.town : address is null or ( ? is not null and-->
+    <!--? has text and length(?)<=50 )-->
+    <!--: 'town is empty or too long.'}-->
+    <!--{ address.street : address is null or ( ? is not null and-->
+    <!--? has text and length(?)<=50 )-->
+    <!--: 'street is empty or too long.'}-->
+    <!--]]>-->
+    <!--</value>-->
+    <!--</property>-->
+    <!--<property name="dateParsers">-->
+    <!--<map>-->
+    <!--<entry key="^\\d{8}$" value="yyyyMMdd"/>-->
+    <!--</map>-->
+    <!--</property>-->
+    <!--</bean>-->
+
+    <bean id="addressValidator" class="org.springmodules.validation.valang.ValangValidator">
+        <property name="valang">
+            <value>
+                <![CDATA[
+      { state : ? is not null and  ? has text and length(?)<=50
+ : 'state is empty or too long.'}
+            { town : ? is not null and  ? has text and length(?)<=50
+ : 'town is empty or too long.'}
+            { street : ? is not null and  ? has text and length(?)<=50
+ : 'street is empty or too long.'}
+      ]]>
+            </value>
+        </property>
+    </bean>
+
+    <bean id="userValidator" class="com.liujun.validator.UserValidator">
+        <property name="addressValidator" ref="addressValidator"/>
+        <property name="valang">
+            <value>
+                <![CDATA[
+      { name : ? is not null and ? has text and length(?)<= 50
+: 'Name is empty or too long.'}
+    { age : ? between 0 and 60 : 'Age should between 0 and 60.'}
+    { birthday : ? is null or ? >[20000101] : 'Birthday should be after 2000-01-01.'}
+            { address : ? is not null : 'Address is empty.'}
+      ]]>
+            </value>
+        </property>
+        <property name="dateParsers">
+            <map>
+                <entry key="^\\d{8}$" value="yyyyMMdd"/>
+            </map>
+        </property>
+    </bean>
+</beans>

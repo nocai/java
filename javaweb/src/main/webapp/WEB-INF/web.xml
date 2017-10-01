@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         id="WebApp_ID" version="3.0">
+    <display-name>Archetype Created Web Application</display-name>
+
+    <!--<servlet>-->
+        <!--<servlet-name>Kaptcha</servlet-name>-->
+        <!--<servlet-class>com.google.code.kaptcha.servlet.KaptchaServlet</servlet-class>-->
+        <!--<init-param>-->
+            <!--<param-name>kaptcha.image.width</param-name>-->
+            <!--<param-value>200</param-value>-->
+            <!--<description>Width in pixels of the kaptcha image.</description>-->
+        <!--</init-param>-->
+        <!--<init-param>-->
+            <!--<param-name>kaptcha.image.height</param-name>-->
+            <!--<param-value>50</param-value>-->
+            <!--<description>Height in pixels of the kaptcha image.</description>-->
+        <!--</init-param>-->
+        <!--<init-param>-->
+            <!--<param-name>kaptcha.textproducer.char.length</param-name>-->
+            <!--<param-value>4</param-value>-->
+            <!--<description>The number of characters to display.</description>-->
+        <!--</init-param>-->
+        <!--<init-param>-->
+            <!--<param-name>kaptcha.noise.impl</param-name>-->
+            <!--<param-value>com.google.code.kaptcha.impl.NoNoise</param-value>-->
+            <!--<description>The noise producer.</description>-->
+        <!--</init-param>-->
+    <!--</servlet>-->
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>Kaptcha</servlet-name>-->
+        <!--<url-pattern>/kaptcha.jpg</url-pattern>-->
+    <!--</servlet-mapping>-->
+
+    <!--<servlet>-->
+        <!--<servlet-name>KaptchaServlet</servlet-name>-->
+        <!--<servlet-class>com.liujun.servlet.KaptchaServlet</servlet-class>-->
+    <!--</servlet>-->
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>KaptchaServlet</servlet-name>-->
+        <!--<url-pattern>/hasKey</url-pattern>-->
+    <!--</servlet-mapping>-->
+
+    <filter>
+        <filter-name>HttpMethodFilter</filter-name>
+        <filter-class>org.springframework.web.filter.HttpPutFormContentFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>HttpMethodFilter</filter-name>
+        <servlet-name>spring</servlet-name>
+    </filter-mapping>
+
+
+    <!-- 配置DispatchcerServlet -->
+    <servlet>
+        <servlet-name>spring</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath*:spring-servlet.xml</param-value>
+        </init-param>
+        <!-- 可以自定义servlet.xml配置文件的位置和名称，默认为WEB-INF目录下，名称为[<servlet-name>]-servlet.xml，如spring-servlet.xml
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>/WEB-INF/spring-servlet.xml</param-value>&nbsp; 默认
+        </init-param>
+        -->
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>spring</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath*:spring-*.xml</param-value>
+    </context-param>
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+</web-app>
+

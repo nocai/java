@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.liujun.dp.factory_method</OriginalElement>
+  <nodes>
+    <node x="0.0" y="149.0">com.liujun.dp.factory_method.HumanFactory</node>
+    <node x="0.0" y="438.0">com.liujun.dp.factory_method.NvWa</node>
+    <node x="288.0" y="149.5">com.liujun.dp.factory_method.YellowHuman</node>
+    <node x="378.5" y="0.0">com.liujun.dp.factory_method.Human</node>
+    <node x="0.0" y="294.0">com.liujun.dp.factory_method.ClassUtils</node>
+    <node x="469.0" y="149.5">com.liujun.dp.factory_method.WhiteHuman</node>
+    <node x="650.0" y="149.5">com.liujun.dp.factory_method.BlackHuman</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.liujun.dp.factory_method.BlackHuman" target="com.liujun.dp.factory_method.Human">
+      <point x="0.0" y="-49.5" />
+      <point x="730.5" y="119.0" />
+      <point x="519.375" y="119.0" />
+      <point x="60.375" y="49.5" />
+    </edge>
+    <edge source="com.liujun.dp.factory_method.WhiteHuman" target="com.liujun.dp.factory_method.Human">
+      <point x="0.0" y="-49.5" />
+      <point x="549.5" y="129.0" />
+      <point x="479.125" y="129.0" />
+      <point x="20.125" y="49.5" />
+    </edge>
+    <edge source="com.liujun.dp.factory_method.YellowHuman" target="com.liujun.dp.factory_method.Human">
+      <point x="0.0" y="-49.5" />
+      <point x="368.5" y="129.0" />
+      <point x="438.875" y="129.0" />
+      <point x="-20.125" y="49.5" />
+    </edge>
+    <edge source="com.liujun.dp.factory_method.HumanFactory" target="com.liujun.dp.factory_method.Human">
+      <point x="0.0" y="-50.0" />
+      <point x="134.0" y="119.0" />
+      <point x="398.625" y="119.0" />
+      <point x="-60.375" y="49.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="308.5" y="310.0" />
+  <SelectedNodes>
+    <node>com.liujun.dp.factory_method.NvWa</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
