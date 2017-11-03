@@ -1,29 +1,29 @@
 package com.liujun.service.impl;
 
 import com.liujun.entity.Teacher;
+import com.liujun.entity.User;
 import com.liujun.service.ITeacherService;
+import com.liujun.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class TeacherService implements ITeacherService {
     private static final Logger L = LoggerFactory.getLogger(TeacherService.class);
+    @Autowired
+    private UserService userService;
 
     @Override
     public  Teacher getTeacher(Integer id) {
-        L.info("getTeacher");
-        L.warn("getTeacher");
-        L.debug("getTeacher");
+        User user = this.userService.getByName("a");
 
-        if (id > 100) {
-            return null;
-        }
         Teacher teacher = new Teacher();
+        teacher.setId(1);
+        teacher.setName("teacher");
         teacher.setAge(1);
-        if (id == 1) {
-            teacher.setName("有name了");
-        }
+        teacher.setUser(user);
         return teacher;
     }
 

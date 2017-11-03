@@ -11,6 +11,16 @@ public class Teacher {
     @Range(min = 1, max = 150, message = "{teacher.age.error}")
     private int age;
 
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     public int getId() {
         return id;
     }

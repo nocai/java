@@ -217,10 +217,33 @@
                 <version>${cxf.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-all</artifactId>
+                <version>${mockito-all.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.powermock/powermock-module-junit4 -->
+            <dependency>
+                <groupId>org.powermock</groupId>
+                <artifactId>powermock-module-junit4</artifactId>
+                <version>1.7.3</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.powermock/powermock-api-mockito -->
+            <dependency>
+                <groupId>org.powermock</groupId>
+                <artifactId>powermock-api-mockito</artifactId>
+                <version>1.7.3</version>
+                <scope>test</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
     <properties>
+        <mockito-all.version>1.10.19</mockito-all.version>
         <mvn.activemq-core.version>5.3.2</mvn.activemq-core.version>
         <hystrix-core>1.5.12</hystrix-core>
         <javax.el>2.2.4</javax.el>
