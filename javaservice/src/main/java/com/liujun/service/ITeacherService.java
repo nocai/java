@@ -10,4 +10,6 @@ import javax.validation.constraints.NotNull;
 public interface ITeacherService {
     @NotNull @Valid
     Teacher getTeacher(@NotNull @Min(value = 1) Integer id);
+
+    Teacher getByName(String name);
 }

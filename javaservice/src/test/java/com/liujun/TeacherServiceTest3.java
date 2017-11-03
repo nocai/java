@@ -1,12 +1,11 @@
 package com.liujun;
 
 import com.liujun.entity.User;
-import com.liujun.service.UserService;
+import com.liujun.service.IUserService;
 import com.liujun.service.impl.UserServiceImpl;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mockito;
 import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
@@ -23,7 +22,7 @@ public class TeacherServiceTest3 {
     @Test
     @PrepareForTest(UserServiceImpl.class)
     public void testConditionSuccess() throws Exception {//① 正常流程
-        UserService userService = PowerMockito.spy(new UserServiceImpl());
+        IUserService userService = PowerMockito.spy(new UserServiceImpl());
 
         User user = new User();
         user.setAge(1);
